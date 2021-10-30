@@ -1,0 +1,536 @@
+!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cầu thủ</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="style.css">
+</head>
+</head>
+<style>
+:root {
+    --maincolor: black;
+    --navmenuheight: 35px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    background: #e2e2e2;
+    font-family: Roboto;
+}
+
+body {
+    width: 1182px;
+    background: white;
+    margin: 0 auto;
+    padding: 0 8px;
+}
+.banner {
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("https://ontv.vtvcab.vn/wp-content/uploads/2021/10/Bang-xep-hang-Ngoai-hang-Anh-vong-9-1080x600.jpg?fbclid=IwAR13wvJrbDuxASdRkBcU2Q_hn3npH1XTGn1Q_ZtNBjo-fEaHxbJ-JhGXYXw");
+}
+
+#main-menu {
+    height: 52px;
+    background: var(--maincolor);
+}
+
+#main-menu > ul {
+    height: 100%;
+    list-style-type: none;
+}
+
+#main-menu > ul > li {
+    height: 100%;
+    float: left;
+    /* background:red; */
+    text-align: center;
+    line-height: 52px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding: 0 61px;
+    color: white;
+    position: relative;
+    cursor: pointer;
+    /* border:1px solid yellow; */
+}
+
+#main-menu > ul > li > a {
+    color: white;
+    text-decoration: none;
+}
+
+#main-menu > ul > li:hover {
+    color: yellow;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#main-menu > ul > li:hover > a {
+    color: yellow;
+}
+
+#main-menu > ul > li > ul {
+    list-style-type: none;
+    width: 250px;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    display: none;
+    background: var(--maincolor);
+}
+
+#main-menu > ul > li:hover > ul {
+    display: block;
+    padding: 8px 0;
+}
+
+#main-menu > ul > li > ul > li {
+    font-size: 0.9rem;
+    text-transform: none;
+    font-weight: normal;
+    height: 35px;
+    line-height: 35px;
+    /* border:1px solid red; */
+    background: var(--maincolor);
+    color: white;
+    text-align: center;
+    padding: 0 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+}
+
+#main-menu > ul > li > ul > li::before {
+    content: "";
+}
+
+#main-menu > ul > li > ul > li:hover {
+    color: #da212133;
+    background: #c71928;
+    animation: slide 1s;
+}
+
+#main-menu > ul > li > ul > li:hover > a {
+    color: antiquewhite;
+}
+
+#main-menu > ul > li > ul > li > a {
+    color: white;
+    text-decoration: none;
+}
+
+
+#newsfeed {
+    height: 35px;
+    margin: 10px 0;
+    background: greenyellow;
+}
+
+#newsfeed .dts {
+    height: 100%;
+    width: 140px;
+    color: whitesmoke;
+    background: var(--maincolor);
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 35px;
+    font-size: 0.85rem;
+  
+    text-align: center;
+    float: left;
+}
+
+#newsfeed .arr {
+    width: 10px;
+    height: 10px;
+    border-top: 17.5px solid transparent;
+    border-bottom: 17.5px solid transparent;
+    border-left: 17.5px solid var(--maincolor);
+    background: #fbf29e;
+    float: left;
+}
+
+#newsfeed .dts a {
+    color: yellow;
+    text-decoration: none;
+}
+
+#newsfeed .running-text {
+    width: 1008px;
+    height: 100%;
+    background: #fbd69e;
+    float: left;
+    overflow: hidden;
+}
+
+#newsfeed .running-text > ul {
+    height: 100%;
+    list-style-type: none;
+    position: relative;
+    animation: runnings 100s infinite;
+    animation-timing-function: linear;
+    white-space: nowrap;
+    line-height: 35px;
+}
+
+#newsfeed .running-text > ul:hover {
+    animation-play-state: paused;
+}
+
+@keyframes runnings {
+    0% {
+        left: 100%;
+    }
+
+    100% {
+        left: -10000px;
+    }
+}
+
+#newsfeed .running-text > ul > li {
+    display: inline-block;
+    margin-left: 20px;
+    font-weight: bold;
+    color:  white ; 
+}
+
+#newsfeed .running-text > ul > li::before {
+    content: " ";
+    color: var(--maincolor);
+}
+
+#newsfeed .running-text > ul > li > a {
+    color: blue;
+}
+
+#row {
+    height: auto;
+    width: 100%;
+    display: flex;
+}
+
+#row .left_row {
+    height: 100%;
+    width: 670px;
+    /* background: pink; */
+    margin-right: 16px;
+    position: relative;
+}
+
+#row .left_row img {
+    height: 100%;
+    width: 100%;
+}
+
+#row .right_row > br {
+    height: 100%;
+    line-height: 46px;
+
+    border-radius: 5px 5px 0 0;
+    padding: 0 15px;
+    margin-right: 3px;
+    position: relative;
+}
+
+#banner .small-banner img {
+    width: 100%;
+    height: 100%;
+}
+
+.column {
+    float: left;
+    width: 30%;
+    padding: 15px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    margin-left: 10px;
+}
+#price .hiu >h2
+{
+    color: black ;
+     margin-bottom: 10px; 
+     margin-top: 30px ; 
+     margin-left: 20px;
+     padding: 20px;
+     font-style: inherit  ; 
+    
+     text-decoration: navy;
+}
+#row .left_row{
+    margin-left: 10px ;
+    padding: 2px ;
+}
+#row .right_row >h1 {
+    color:  green ;
+    text-shadow: #e2e2e2;
+    text-shadow: #fbd69e 1px;
+    padding: 10pxs;
+    text-align: right ;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#row .right-side {
+    color: black;
+    margin-left: 200px;
+    text-align: center;
+    margin-right: 10px;
+    float: left;
+}
+
+.title {
+    color: black;
+    margin-bottom: 50px;
+}
+
+.right_row .title-content {
+    margin-bottom: 10px;
+}
+
+.noidung {
+    margin-left: 80px;
+    color: rgb(175, 9, 9);
+    padding: 20px;
+}
+
+#noidungcon {
+    margin-left: 80px;
+    color: rgb(78, 77, 77);
+    margin-bottom: 20px;
+    margin-right: 50px;
+}
+
+#bottom {
+    width: 100%;
+    height: 1px;
+    background: red ;
+   margin-top: 60px;
+   margin-bottom: auto;
+   margin-left: auto ;
+   margin-right: 60px;
+    
+    align-items: center;
+}
+
+#footer {
+    background-color: grey;
+    height: 150px;
+    margin-top: 50px;
+}
+
+#cottrai {
+    float: left;
+    color: white;
+    width: 33.33%;
+    margin-top: 40px;
+    margin-left: 30px;
+    height: fit-content;
+}
+
+#cotgiua {
+    float: left;
+    color: white;
+    width: 30%;
+    margin-top: 40px;
+    height: fit-content;
+}
+
+#cotphai {
+    float: left;
+    color: white;
+    width: 33.33%;
+    margin-top: 40px;
+    height: fit-content;
+}
+#price-1 .hiu {
+    color: black ; 
+     margin-bottom: 10px; 
+     margin-top: 30px ; 
+     margin-left: 20px;
+     padding: 20px;
+     font-style: border;
+     text-transform: uppercase; 
+}
+</style>
+<body>
+    <div class="banner"></div>
+    <div id="main-menu">
+        <ul>
+            <li>Giới thiệu
+                <ul>
+                    <li><a href="">Về chúng tôi</a></li>
+                    <li><a href="">Các đội bóng</a></li>
+
+                </ul>
+            <li>Đội bóng
+                <ul>
+                    <li><a href="">Lịch sử hình thành </a></li>
+                    <li><a href="">Sân nhà </a></li>
+                </ul>
+            </li>
+            <li>Giải đấu
+                <ul>
+                    <li><a href="">Trong nước</a></li>
+                    <li><a href="">Ngoài nước</a></li>
+
+                </ul>
+            </li>
+            <li> <a href= "http://127.0.0.1:5500/hiu.html"> Cầu thủ của tháng</a></li>
+            <li>Huấn luyện viên của tháng </li>
+    </div>
+
+
+    <div id="newsfeed">
+        <div class="dts"> Kết quả vòng 9 </div>
+        <div class="arr"></div>
+        <div class="running-text">
+            <ul>
+                <li>Kết quả các trận đấu vòng 9 - giải ngoại hạng anh: </li>
+                <li>Newcastle 0 - 7 Chelsea</li>
+                <li>Tottenham 2 - 0 Man City   </li>
+                <li>Man United 5 - 3 West Brom</li>
+                <li>Liverpool 9 - 2 Leicester</li>
+                <li>Burnley 2 - 2 Crystal Palace</li>
+                <li>Fulham 4 - 3 Everton</li>
+                <li>Sheffield Utd 3 - 2 West Ham</li>
+            </ul>
+        </div>
+    </div>
+    <div id = "price">
+        <div class="hiu">
+            <h2>Cầu thủ của tháng: </h1>
+        </div>        
+    </div>
+    
+    <div id="row">
+        <div class="left_row">
+            <img src="http://media.tinthethao.com.vn/files/bongda/2021/06/07/mason-mount-chi-ra-khoanh-khac-kinh-khung-tai-chelsea-120943jpg.jpg"
+                alt="harry.potterseason1">
+        </div>
+        <div class="right_row">
+            <h1 class="title">Mason Mount</h1>
+            <p class="title-content"> Câu lạc bộ (CLB) : Chelsea</p>
+            <p class="title-content"> Quốc tịnh : Anh </p>
+            <p class="title-content"> Tuổi : 22</p>
+            <p class="title-content"> Số Áo : 19</p>
+            <p class="title-content"> Vị trí : Tiền đạo, Tiền vệ</p>
+            <p class="title-content"> Bàn thắng (Goal) : 3</p>
+            <p class="title-content"> Hỗ trợ (Assist) : 2 </p>
+           
+        </div>
+    </div>
+    
+    
+    <div id="bottom"> </div>
+
+    <div id = "price-1">
+        <div class="hiu">
+            <h2>Đôi nét về cầu thủ:  </h2>
+        </div>        
+    </div>
+    <div class="noidung">
+        <h2><b>Sự nghiệp câu lạc bộ</b></h2>
+    </div> 
+    <div id="noidungcon">
+        <p>
+            <i>
+                Mount sinh ra tại thành phố Portsmouth, Hampshire.[3] Cha của anh, ông Tony, 
+                là một cầu thủ và huấn luyện viên bóng đá ở một số câu lạc bộ nhỏ ở địa phương như Havant Town.[4] 
+                Anh gia nhập đội trẻ Chelsea từ năm 6 tuổi.[5] Vào năm anh 15 tuổi, 
+                cha của anh cố gắng thuyết phục anh rời Chelsea vì không tin tưởng vào tương lai của anh tại đội một Chelsea nhưng anh đã từ chối và quyết định 
+                tiếp tục gắn với câu lạc bộ.[4]
+            </i>
+        </p>
+        
+    </div>
+    <div class="noidung">
+        <h2><b>Cho mượn tại Vitesse</b></h2>
+    </div> 
+    <div id="noidungcon">
+        <p>
+            <i>
+                Mount được đem cho đội bóng Hà Lan là Vitesse mượn vào ngày 24 tháng 7 năm 2017 với thời hạn một năm. Anh có trận đấu đầu tiên trên đất Hà Lan khi được vào sân 13 phút trong trận thua AZ Alkmaar 2-1 tại đấu trường Eredivisie ngày 26 tháng 8.[4] Đến ngày 20 tháng 9, anh lần đầu tiên được đá chính trong trận đấu vòng 1 Cúp KNVB với AVV Swift. 11 ngày sau đó, anh có bàn thắng đầu tiên cho Vitesse gỡ hòa 1-1 trong trận đối đầu với FC Utrecht.[6] Trong tháng 10, anh còn ghi bàn trong trận đấu với PSV Eindhoven và chiếm được vị trí chính thức từ tháng 11.[4]
+
+Đến tháng 3 năm 2018, Mount lọt vào top 50 trong Bảng xếp hạng "Cầu thủ trẻ xuất sắc nhất năm" của tạp chí Goal.[7] Ngày 9 tháng 5 năm 2018, anh có hat-trick đầu tiên trong sự nghiệp ở trận thắng 5-2 trước ADO Den Haag để đặt một chân vào trận chung kết play-off giành quyền tham dự UEFA Europa League 2018–19.[8]
+
+Trong mùa bóng thi đấu cho Vitesse, Mount ra sân tổng cộng 38 lần, ghi được 14 bàn thắng và có 9 lần kiến tạo thành bàn.[9] Anh được các cổ động viên Vitesse bình chọn là cầu thủ xuất sắc nhất mùa.[10]
+            </i>
+        </p>
+    </div>
+    <div class="noidung">
+        <h2><b>Cho mượn tại Derby County</b></h2>
+    </div> 
+    <div id="noidungcon">
+        <p>
+            <i>
+                Mount gia nhập đội bóng thi đấu tại Championship là Derby County vào ngày 17 tháng 7 năm 2018 theo hợp đồng cho mượn có thời hạn một năm.[11] Anh ghi bàn thắng ngay trong trận đấu đầu tiên cho Derby trước Reading và giúp đội bóng của tân huấn luyện viên Frank Lampard có chiến thắng đầu tiên trong mùa giải.[12]
+
+                Ngày 30 tháng 3 năm 2019, sau hai tháng nghỉ thi đấu vì chấn thương, anh trở lại trong trận đấu với Rotherham United và ngay lập tức đem về một quả phạt đền cho đồng đội Martyn Waghorn ghi bàn và cá nhân anh cũng có một bàn nữa trong chiến thắng 6-1.[13] Ngày 13 tháng 4 năm 2019, anh có hat-trick thứ hai trong sự nghiệp đem về chiến thắng 4–0 trước Bolton Wanderers tại Championship.[14] Derby bước vào trận chung kết tranh play-off lên hạng sau trận thắng 4-2 trước Leeds United ngày 15 tháng 5 và Mount có một pha lập công trong trận này.
+                [15] Tuy nhiên trong trận chung kết đội bóng của Mount bị Aston Villa đánh bại với tỉ số 2-1.
+            </i>
+        </p>
+    </div>
+
+    <div class="noidung">
+        <h2><b>Trở lại Chelsea</b></h2>
+    </div> 
+    <div id="noidungcon">
+        <p>
+            <i>
+                Ngày 26 tháng 9 năm 2020, Mount có bàn thắng đầu tiên trong mùa giải mới với một cú sút xa ở đầu hiệp 2 mở đầu cho hành trình tìm lại điểm số thành công của Chelsea sau khi đã bị West Bromwich dẫn trước đến 3-0 sau khi hiệp 1 kết thúc.[28] Tuy nhiên chỉ 3 ngày sau đó anh lại trở thành tội đồ khiến Chelsea bị loại khỏi Cúp EFL 2020-21 khi thực hiện không thành công lượt sút luân lưu của mình.[29]
+
+                Vào ngày sinh nhật lần thứ 22, anh là người mở màn chiến thắng 4-0 trước Morecambe tại vòng 3 Cúp FA 2020-21 từ cú sút căng ngoài vòng cấm địa.[30] Một tuần sau đó, Mount ghi bàn thắng duy nhất trong trận đấu với Fulham, chấm dứt chuỗi ba trận chỉ hòa và thua ở Ngoại hạng Anh của Chelsea.[31] Trong tháng 2 năm 2021, anh có hai bàn thắng tại Ngoại hạng Anh trong chiến thắng 2-1 trước Sheffield United và trận hòa 1-1 với Southampton.[32][33]
+                
+                Ngày 4 tháng 3 năm 2021, ở phút 42 trận đấu trên sân Liverpool, từ đường chuyền vượt tuyến của N'Golo Kante, Mount khống chế bóng rồi từ sát mép vòng cấm địa anh đặt lòng vào góc xa, ghi bàn thắng duy nhất của trận đấu.[34] Ngày 3 tháng 4, anh tiếp tục lập công trong cuộc đối đầu với West Bromwich ở Ngoại hạng Anh nhưng Chelsea phải chịu thất bại nặng nề 5-2 ngay trên sân nhà.[35] Đến ngày 7 tháng 4 trong trận lượt đi tứ kết Champions League với Porto, Mount mở tỷ số từ phút 32 bằng một pha xử lý ở đẳng cấp cao giúp Chelsea nắm lợi thế lớn để giành vé vào bán kết Champions League với chiến thắng 2-0 chung cuộc.[36]
+                
+                Chelsea giành chiến thắng trước Real Madrid 2-0 ở lượt về bán kết Champions League ngày 5/5 để đi tiếp với tổng tỷ số 3-1 và tạo ra trận chung kết toàn Anh ở Champions League. Mount là người nhấn chìm hy vọng của Real ở cuối trận từ cú căng ngang của Christian Pulisic.[37] Sau khi thất bại trước Leicester City trong trận chung kết Cúp FA 2021[38], ở trận chung kết UEFA Champions League với Manchester City ngày 29 tháng 5, Mount có đường chọc khe đúng tầm Kai Havertz băng xuống ghi bàn thắng duy nhất của trận đấu, đem về danh hiệu Champions League thứ hai trong lịch sử cho Chelsea.[39]Trong trận gặp Norwich City vào ngày 23/10 Mount đã lập hat-trick đầu tiên trong màu áo Chelsea nhấn chìm Norwich City đem về chiến thắng 7-0 cho Chelsea.[40]
+            </i>
+        </p>
+    </div>
+
+  
+    <footer id="footer">
+        <div class="cot">
+            <div id="cottrai">
+                <BR>From Híu with love </br>
+                @ Được thực hiện bởi Híu 2 túi
+                </p>
+            </div>
+            <div id="cotgiua">
+                <li><a href="#" style="color: white ;">Các chính sách hỗ trợ</a></li>
+                <li><a href="#" style="color: white ;">Điều khoản dịch vụ</a></li>
+                <li> <a href="#" style="color: white ;">Đối tác</a></li>
+                <li> <a href="#" style="color: white ;">Trợ giúp</a></li>
+            </div>
+
+            <div id="cotphai">
+                Giữ liên lạc
+                <li><a href="#" style="color: white ;"> Twitter</a></li>
+                <li><a href="#" style="color: white ;">Facebook</a></li>
+                <li> Hotline: 0923.610.732</li>
+            </div>
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
+</body>
+
+</html>
